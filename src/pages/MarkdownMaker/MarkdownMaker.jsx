@@ -13,6 +13,8 @@ export default function MarkdownMaker() {
   
   const [fields, setFields] = useState(markdownMaker());
   const [selectedOption, setSelectedOption] = useState('');
+  const [markdownText, setMarkdownText] = useState('');
+
   
   const handleRemoveField = (index) => {
     const newFields = [...fields];
@@ -24,6 +26,8 @@ export default function MarkdownMaker() {
     const newFields = [...fields];
     newFields[index].value = newValue;
     setFields(newFields);
+    const newMarkdownText = newFields.map(field => field.value);
+    setMarkdownText(newMarkdownText);
   };
 
   const handleAddField = () => {
@@ -88,7 +92,8 @@ export default function MarkdownMaker() {
           <button onClick={() => handleRemoveField(fields.length - 1)}>Remove Last Field</button>
       </div>
       <div className='render'>
-        Markdown Render
+        <h1>Markdown Render</h1>
+        {markdownText}
 
       </div>
     </div>
