@@ -13,6 +13,10 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link>View Saved</Link>
       &nbsp;&nbsp;
+      <Link to="/makeme">New Markdown</Link>
+      &nbsp;&nbsp;
+      <Link>Premade Templates</Link>
+      &nbsp;&nbsp;
       <span>Welcome, {user.name}</span>
       &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
