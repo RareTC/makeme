@@ -28,8 +28,8 @@ export default function MarkdownMaker() {
 
   const handleAddField = () => {
     switch (selectedOption) {
-      case 'titleBox':
-        setFields([...fields, { type: 'titleBox', value: '' }]);
+      case 'title':
+        setFields([...fields, { type: 'title', value: '' }]);
         break;
       case 'sectionHeader':
         setFields([...fields, { type: 'sectionHeader', value: '' }]);
@@ -79,7 +79,7 @@ export default function MarkdownMaker() {
           <div>
           <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
             <option value="">Select an option</option>
-            <option value="titleBox">Title Box</option>
+            <option value="title">Title</option>
             <option value="sectionHeader">Section Header</option>
             <option value="sectionParagraph">Section Paragraph</option>
           </select>
