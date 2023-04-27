@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function Title({ value, onChange }) {
 
-  
 
   return (
     <div>

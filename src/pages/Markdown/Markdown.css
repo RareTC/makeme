@@ -1,0 +1,24 @@
+.textcontainer {
+  border: solid 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.markdowntext {
+  width: 45%;
+  height: 800px;
+  border-radius: 15px;
+  background-color: rgba(214, 209, 209, 0.5);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(220, 215, 215, 0.803);
+  box-shadow: 0 0 20px rgba(8,7,16,0.6);
+}
+
+.markdown {
+  border: solid 2px black;
+  width: 45%;
+  height: 800px;
+  border-radius: 15px;
+  background-color: white;
+}
