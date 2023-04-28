@@ -2,7 +2,7 @@ import React from 'react';
 import './Markdown.css';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-
+import MarkdownComponents from '../MarkdownComponentPage/MarkdownComponents';
 
 
 export default function Markdown() {
@@ -12,6 +12,9 @@ export default function Markdown() {
 
     return (
         <div className='textcontainer'>
+            <div>
+                <MarkdownComponents setMarkdown={setMarkdown} />
+            </div>
             <textarea className='markdowntext' 
             value={markdown}
             onChange={(e) => setMarkdown(e.target.value)}
