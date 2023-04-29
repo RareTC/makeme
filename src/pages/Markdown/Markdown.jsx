@@ -2,7 +2,7 @@ import React from 'react';
 import './Markdown.css';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MarkdownComponents from '../MarkdownComponentPage/MarkdownComponents';
@@ -36,6 +36,17 @@ export default function Markdown() {
             <div className='markdown'>
                 <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} components={{
                     code: Component,
+                    table: ({ children }) => (
+                        <table style={{ backgroundColor: "lightblue", border: "solid 1px" }}>
+                          {children}
+                        </table>
+                      ),
+                      td: ({ children }) => (
+                        <td style={{ padding: "5px", border: "solid 1px" }}>{children}</td>
+                      ),
+                      th: ({ children }) => (
+                        <th style={{ padding: "5px", border: "solid 1px" }}>{children}</th>
+                      )
                 }} >
                     {markdown}
                 </ReactMarkdown>
