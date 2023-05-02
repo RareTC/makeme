@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MarkdownComponents from '../MarkdownComponentPage/MarkdownComponents';
+import * as markdownsAPI from '../../utilities/markdowns-api';
 
 
 export default function Markdown() {
@@ -18,7 +19,8 @@ export default function Markdown() {
     try {
       const text = markdown;
       const markdownTitle = title;
-      console.log(text, markdownTitle)
+      const markdowns = await markdownsAPI.saveMarkdown(text, markdownTitle);
+      console.log(markdowns)
     } catch(err) {
       console.log('Error Saving Markdown', err)
     }
