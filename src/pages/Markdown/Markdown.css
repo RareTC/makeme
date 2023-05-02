@@ -17,10 +17,47 @@
 }
 
 .markdown {
-  border: solid 2px black;
+  border: solid 1px #2d3e45;
   width: 45%;
   height: 800px;
   border-radius: 15px;
-  background-color: white;
+  background-color: #e5ede6;
   padding: 10px;
+}
+
+.savebtn {
+  padding-top: 20px;
+  position: relative;
+  left: 95px;
+}
+
+.savebtn > input {
+  padding: 5px;
+  background-color: #e5ede6;
+  color: #2d3e45;
+  border-radius: 5px;
+  border: solid #c8433f;
+  font-weight: 700;
+}
+
+.savebtn > input:focus {
+  outline: none;
+}
+
+.savebtn > button {
+  margin-left: 5px;
+  width: 45px;
+  background-color: #2d3e45;
+  color: #EE933D;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+.savebtn > button:hover {
+  background-color: #c8433f;
+  color: #2d3e45 !important;
 }
