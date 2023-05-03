@@ -15,16 +15,16 @@ export default function Markdown() {
   const [title, setTitle] = useState('');
 
   async function handleSave(evt) {
-    evt.preventDefault();
+    console.log('attempting to save')
+    // evt.preventDefault();
     try {
-      const text = markdown;
-      const markdownTitle = title;
-      const markdowns = await markdownsAPI.saveMarkdown(text, markdownTitle);
-      console.log(markdowns)
+      const payload = {markdown, title} 
+      console.log(payload, 'first try')
+      const savedMarkdown = await markdownsAPI.saveMarkdown(payload);
+      console.log(savedMarkdown, 'save button')
     } catch(err) {
       console.log('Error Saving Markdown', err)
     }
-    // saveMarkdown(title, text);
   };
 
   const Component = ({ node, inline, className, children, ...props }) => {
@@ -48,7 +48,8 @@ export default function Markdown() {
           onChange={(e) => setTitle(e.target.value)}
           placeholder='Enter project title'
         />
-        <button onClick={handleSave}>Save</button>
+        <button onClick={() => handleSave()}>Save</button>
+
       </div>
       <div className='textcontainer'>
         <div className='markdowncomponents'>
