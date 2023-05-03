@@ -9,12 +9,12 @@ export default function AuthPage({ setUser }) {
     <main className='auth-main'>
       <div className='auth-container'>
         <h1 className='auth'>Authorization Page</h1>
-        <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
         { showSignUp ?
             <SignUpForm setUser={setUser} />
             :
             <LoginForm setUser={setUser} />
-        }
+          }
+          <p className='signuptext' onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Or Log In Here' : 'Or Sign Up Here'}</p>
         </div>
     </main>
   );
