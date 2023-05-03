@@ -1,5 +1,6 @@
 import React from 'react';
 import './Markdown.css';
+import './Readme.css';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -36,30 +37,6 @@ export default function Markdown() {
     );
   };
 
-  const tableStyle = {
-    table: ({ children }) => (
-      <table style={{ display: "block", width: "100%", overflow: "auto", borderCollapse: "collapse",
-       borderSpacing: "0", marginBottom: "16px", marginTop: "16px" }}>
-        {children}
-      </table>
-    ),
-    tr: ({ children }) => (
-      <tr style={{ backgroundColor: "#fff", borderTop: "1px solid #c6cbd1" }}>
-        {children}
-      </tr>
-    ),
-    th: ({ children }) => (
-      <th style={{ padding: "6px 13px", border: "1px solid #dfe2e5", fontWeight: 600 }}>
-        {children}
-      </th>
-    ),
-    td: ({ children }) => (
-      <td style={{ padding: "6px 13px", border: "1px solid #dfe2e5", fontWeight: 400 }}>
-        {children}
-      </td>
-    ),
-  };  
-
 
   return (
     <>
@@ -87,7 +64,6 @@ export default function Markdown() {
         <div className='markdown'>
           <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} components={{
             code: Component,
-            ...tableStyle,
           }} >
             {markdown}
           </ReactMarkdown>

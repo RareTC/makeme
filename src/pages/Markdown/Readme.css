@@ -1,0 +1,35 @@
+.markdown h1::after,
+.markdown h2::after {
+    content: '';
+    display: block;
+    margin-top: 0.5em;
+    border-bottom: 1px solid #b3a7a7;
+}
+
+.markdown table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+  
+  .markdown tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+  }
+  
+  .markdown th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+    font-weight: 600;
+  }
+  
+  .markdown td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+    font-weight: 400;
+  }
+  
