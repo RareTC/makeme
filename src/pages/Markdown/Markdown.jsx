@@ -36,6 +36,30 @@ export default function Markdown() {
     );
   };
 
+  const tableStyle = {
+    table: ({ children }) => (
+      <table style={{ display: "block", width: "100%", overflow: "auto", borderCollapse: "collapse",
+       borderSpacing: "0", marginBottom: "16px", marginTop: "16px" }}>
+        {children}
+      </table>
+    ),
+    tr: ({ children }) => (
+      <tr style={{ backgroundColor: "#fff", borderTop: "1px solid #c6cbd1" }}>
+        {children}
+      </tr>
+    ),
+    th: ({ children }) => (
+      <th style={{ padding: "6px 13px", border: "1px solid #dfe2e5", fontWeight: 600 }}>
+        {children}
+      </th>
+    ),
+    td: ({ children }) => (
+      <td style={{ padding: "6px 13px", border: "1px solid #dfe2e5", fontWeight: 400 }}>
+        {children}
+      </td>
+    ),
+  };  
+
 
   return (
     <>
@@ -63,17 +87,7 @@ export default function Markdown() {
         <div className='markdown'>
           <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} components={{
             code: Component,
-            table: ({ children }) => (
-              <table style={{ backgroundColor: "lightblue", border: "solid 1px" }}>
-                {children}
-              </table>
-            ),
-            td: ({ children }) => (
-              <td style={{ padding: "5px", border: "solid 1px" }}>{children}</td>
-            ),
-            th: ({ children }) => (
-              <th style={{ padding: "5px", border: "solid 1px" }}>{children}</th>
-            )
+            ...tableStyle,
           }} >
             {markdown}
           </ReactMarkdown>
