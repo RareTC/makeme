@@ -15,13 +15,12 @@ export default function Markdown() {
   const [title, setTitle] = useState('');
 
   async function handleSave(evt) {
-    console.log('attempting to save')
-    // evt.preventDefault();
+    // console.log('attempting to save')
     try {
       const payload = {markdown, title} 
-      console.log(payload, 'first try')
+      // console.log(payload, 'first try')
       const savedMarkdown = await markdownsAPI.saveMarkdown(payload);
-      console.log(savedMarkdown, 'save button')
+      // console.log(savedMarkdown, 'save button')
     } catch(err) {
       console.log('Error Saving Markdown', err)
     }
