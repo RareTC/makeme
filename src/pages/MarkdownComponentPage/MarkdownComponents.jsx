@@ -9,6 +9,7 @@ import Table from '../../components/MarkdownButtons/Table';
 import Badge from '../../components/MarkdownButtons/Badge';
 import Strike from '../../components/MarkdownButtons/Strike';
 import Link from '../../components/MarkdownButtons/Link';
+import Image from '../../components/MarkdownButtons/Image';
 
 export default function MarkdownComponents({setMarkdown}) {
 
@@ -23,7 +24,7 @@ export default function MarkdownComponents({setMarkdown}) {
         <Badge setMarkdown={setMarkdown} />
         <Strike setMarkdown={setMarkdown} />
         <Link setMarkdown={setMarkdown} />
-
+        <Image setMarkdown={setMarkdown} />
     </div>
   )
   }

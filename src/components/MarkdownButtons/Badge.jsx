@@ -10,5 +10,5 @@ export default function MarkdownBadge({ setMarkdown }) {
     );
   };
 
-  return <button onClick={handleClick}>Add Badge</button>;
+  return <button onClick={handleClick}>Badge</button>;
 }
