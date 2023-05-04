@@ -10,15 +10,16 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className='navbar'>
-      <Link className='navlink'>Log In</Link>
-      &nbsp;&nbsp;
-      <Link className='navlink'>View Saved</Link>
-      &nbsp;&nbsp;
+      <Link className='navlink' to="/">New</Link>
       <Link className='navlink' to="/templates">Templates</Link>
-      &nbsp;&nbsp;
-      <Link className='navlink' to="/new">Markdown</Link>
-      &nbsp;&nbsp;
-      <Link className='navlink' to="" onClick={handleLogOut}>Log Out</Link>
+      { user ? 
+      <>
+      <Link className='navlink' to="/saved">My Projects</Link>
+      <Link className='navlink' to="/" onClick={handleLogOut}>Log Out</Link>
+      </>
+      :
+      <Link className='navlink'>Log In</Link>
+    }
     </nav>
   );
 }

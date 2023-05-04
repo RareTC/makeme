@@ -1,6 +1,5 @@
 .textcontainer {
   display: flex;
-  align-items: center;
   justify-content: center;
   padding-top: 20px;
 }
@@ -14,6 +13,11 @@
   border: 2px solid rgba(220, 215, 215, 0.803);
   box-shadow: 0 0 20px rgba(8,7,16,0.6);
   padding: 10px;
+  font-size: 15px;
+}
+
+.markdowntext:focus{
+  outline: none;
 }
 
 .markdown {

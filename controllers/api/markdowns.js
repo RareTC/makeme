@@ -1,7 +1,17 @@
 const Markdown = require('../../models/markdown');
 
 module.exports = {
-    saveMarkdown
+    saveMarkdown, 
+    getAllForUser,
+}
+
+async function getAllForUser(req, res) {
+    try {
+        const markdowns = await Markdown.find({ user:req.user._id}).sort('-createdAt');
+        res.json(markdowns);
+    } catch(err) {
+        res.status(400).json(err);
+}
 }
 
 async function saveMarkdown(req, res) {

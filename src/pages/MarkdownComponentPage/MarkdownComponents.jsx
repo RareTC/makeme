@@ -14,7 +14,8 @@ import Image from '../../components/MarkdownButtons/Image';
 export default function MarkdownComponents({setMarkdown}) {
 
   return (
-    <div className='markdowncomponents'>MarkdownComponents
+    <div className='markdowncomponents'>
+        Click to Add:
         <MarkdownTitle setMarkdown={setMarkdown}/>
         <Bold setMarkdown={setMarkdown}/>
         <Italics setMarkdown={setMarkdown}/>
