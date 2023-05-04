@@ -1,6 +1,6 @@
 import React from 'react';
 import './Markdown.css';
-import './Readme.css';
+import 'github-markdown-css';
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -62,10 +62,10 @@ export default function Markdown() {
         </textarea>
 
         <div className='markdown'>
-          <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} components={{
+          <ReactMarkdown className="markdown-body" children={markdown} remarkPlugins={[remarkGfm]} components={{
             code: Component,
           }} >
-            {markdown}
+            {/* {markdown} */}
           </ReactMarkdown>
         </div>
       </div>
