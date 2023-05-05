@@ -30,7 +30,12 @@ dialog {
     background-color: #c8433f;
     border: none;
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    border-radius: 10px
+    border-radius: 10px;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    position: absolute;
+    top: 25%;
 }
 
 .modalinput {
@@ -61,6 +66,7 @@ dialog {
     background-color: #EE933D;
     color: #2d3e45 !important;
 }
+
 
 .modalclose {
     background-color: transparent;

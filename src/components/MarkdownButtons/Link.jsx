@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function MarkdownLink({ setMarkdown }) {
   const [label, setLabel] = useState('');
   const [url, setUrl] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const dialogRef = useRef(null);
 
   const handleClick = () => {
     setMarkdown((markdown) => markdown + `\n[${label}](${url})\n`);
@@ -12,11 +13,28 @@ export default function MarkdownLink({ setMarkdown }) {
     setShowModal(false);
   };
 
+  const handleOutsideClick = (event) => {
+    if (dialogRef.current && !dialogRef.current.contains(event.target)) {
+      setShowModal(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showModal) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    } else {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [showModal]);
+
   return (
     <>
       <button onClick={() => setShowModal(true)}>Link</button>
       {showModal && (
-          <dialog open>
+          <dialog ref={dialogRef}>
             <button onClick={() => setShowModal(false)} className='modalclose'>X</button>
             <form>
               <input
