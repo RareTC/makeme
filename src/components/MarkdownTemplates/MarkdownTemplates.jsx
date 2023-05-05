@@ -32,7 +32,7 @@ export default function MarkdownTemplates({ setMarkdown }) {
 
   return (
     <>
-    <button className='dropmenu' onClick={() => setShowModal(true)}>Templates</button>
+    <button id='templates' onClick={() => setShowModal(true)}>Templates</button>
 
     {showModal && (
             <dialog ref={dialogRef}>
