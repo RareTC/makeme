@@ -9,6 +9,7 @@ import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MarkdownComponents from '../MarkdownComponentPage/MarkdownComponents';
 import * as markdownsAPI from '../../utilities/markdowns-api';
 import SavedMarkdown from '../../components/SavedMarkdown/SavedMarkdown';
+import remarkGemoji from 'remark-gemoji'
 
 
 export default function Markdown() {
@@ -46,6 +47,7 @@ export default function Markdown() {
     <>
       <div className='savebtn'>
         <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved}/>
+
         <input
           type='text'
           name='title'
@@ -66,7 +68,7 @@ export default function Markdown() {
         </textarea>
 
         <div className='markdown'>
-          <ReactMarkdown className="markdown-body" children={markdown} remarkPlugins={[remarkGfm]} components={{
+          <ReactMarkdown className="markdown-body" children={markdown} remarkPlugins={[remarkGfm, remarkGemoji]} components={{
             code: Component,
           }} >
             {/* {markdown} */}

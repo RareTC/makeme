@@ -23,3 +23,16 @@
 .navlink:hover {
     background: rgba(84, 117, 131, 0.5);
 }
+
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 43.5%;
+    background-color: #2d3e45;
+    /* padding: 10px; */
+    color: #ee933d;
+}
+
+.dropmenu {
+    padding: 10px;
+}
