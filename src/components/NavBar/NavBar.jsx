@@ -20,7 +20,7 @@ export default function NavBar({ user, setUser }) {
           to="/" 
           onClick={() => setShowDropdown(!showDropdown)}
         >
-          Templates
+          Templates ↡
         </Link>
       <div className='nav-dropdown'>
         {showDropdown && <MarkdownTemplates />}
