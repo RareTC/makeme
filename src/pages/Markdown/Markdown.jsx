@@ -2,20 +2,20 @@ import React from 'react';
 import './Markdown.css';
 import 'github-markdown-css';
 import { useState } from 'react';
-// import { useLocation } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MarkdownComponents from '../MarkdownComponentPage/MarkdownComponents';
 import * as markdownsAPI from '../../utilities/markdowns-api';
+import SavedMarkdown from '../../components/SavedMarkdown/SavedMarkdown';
 
 
 export default function Markdown() {
 
   const [markdown, setMarkdown] = useState('');
   const [title, setTitle] = useState('');
-  // const location = useLocation();
+  const [newMarkdownSaved, setNewMarkdownSaved] = useState(false);
 
 
   async function handleSave(evt) {
@@ -23,8 +23,9 @@ export default function Markdown() {
     try {
       const payload = {markdown, title} 
       // console.log(payload, 'first try')
-      const savedMarkdown = await markdownsAPI.saveMarkdown(payload);
+      await markdownsAPI.saveMarkdown(payload);
       // console.log(savedMarkdown, 'save button')
+      setNewMarkdownSaved(true);
     } catch(err) {
       console.log('Error Saving Markdown', err)
     }
@@ -44,6 +45,7 @@ export default function Markdown() {
   return (
     <>
       <div className='savebtn'>
+        <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved}/>
         <input
           type='text'
           name='title'
@@ -52,7 +54,6 @@ export default function Markdown() {
           placeholder='Enter project title'
         />
         <button onClick={() => handleSave()}>Save</button>
-
       </div>
       <div className='textcontainer'>
         <div className='markdowncomponents'>

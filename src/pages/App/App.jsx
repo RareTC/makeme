@@ -5,7 +5,6 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Markdown from '../Markdown/Markdown';
-import SavedMarkdown from '../SavedMarkdown/SavedMarkdown';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -18,7 +17,6 @@ export default function App() {
           {/* <Markdown path=""/> */}
             <Routes>
               <Route path='/' element={< Markdown />}/>
-              <Route path='/saved' element={<SavedMarkdown user={user} setUser={setUser} />}/>
             </Routes>
           </>
           :
