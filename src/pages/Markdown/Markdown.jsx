@@ -10,6 +10,7 @@ import MarkdownComponents from '../MarkdownComponentPage/MarkdownComponents';
 import * as markdownsAPI from '../../utilities/markdowns-api';
 import SavedMarkdown from '../../components/SavedMarkdown/SavedMarkdown';
 import remarkGemoji from 'remark-gemoji'
+import MarkdownTemplates from '../../components/MarkdownTemplates/MarkdownTemplates'
 
 
 export default function Markdown() {
@@ -47,7 +48,7 @@ export default function Markdown() {
     <>
       <div className='savebtn'>
         <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved}/>
-
+        < MarkdownTemplates setMarkdown={setMarkdown} />
         <input
           type='text'
           name='title'
