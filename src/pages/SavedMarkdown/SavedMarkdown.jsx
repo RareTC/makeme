@@ -16,19 +16,15 @@ export default function SavedMarkdown() {
         fetchMarkdowns();
     }, []);
 
-    function handleClick(markdownContent) {
-        navigate('/markdown', { state: { markdownContent: markdownContent } });
-    }
-
     return (
         <div>
             <h1>Saved Markdown</h1>
             <div>
                 {savedMarkdowns.map((markdown) => (
                     <h2 key={markdown._id}>
-                        <Link onClick={() => handleClick(markdown.content)}>
-                            {markdown.title}
-                        </Link>
+                        <a onClick={() => navigate('/', { markdown }, console.log(markdown, 'on a tag'))}>
+                            View {markdown.title}
+                        </a>
                     </h2>
                 ))}
             </div>

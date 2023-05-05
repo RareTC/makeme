@@ -2,6 +2,7 @@ import React from 'react';
 import './Markdown.css';
 import 'github-markdown-css';
 import { useState } from 'react';
+// import { useLocation } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -14,6 +15,8 @@ export default function Markdown() {
 
   const [markdown, setMarkdown] = useState('');
   const [title, setTitle] = useState('');
+  // const location = useLocation();
+
 
   async function handleSave(evt) {
     // console.log('attempting to save')
