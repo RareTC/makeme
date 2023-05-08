@@ -30,6 +30,22 @@
     background: transparent;
 }
 
+.templateclose {
+    background-color: transparent;
+    color: #2d3e45;
+    border: none;
+    font-size: large;
+    align-self: flex-start;
+    font-weight: 800;
+}
+
+.templateclose:hover {
+    cursor: pointer;
+    color: #EE933D;
+}
+
+
+
 .markdowncomponents > button {
     margin-top: 5px;
     width: 90%;

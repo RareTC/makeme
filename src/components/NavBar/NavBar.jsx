@@ -12,13 +12,13 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className='navbar'>
-      <Link className='navlink' to="/">New</Link>
-        <Link 
+      {/* <Link className='navlink' to="/">New</Link> */}
+        {/* <Link 
           className='navlink' 
           to="/" 
         >
           Templates 
-        </Link>
+        </Link> */}
       { user ? 
         <>
           {/* <Link className='navlink' to="/saved">My Projects</Link> */}

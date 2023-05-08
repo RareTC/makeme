@@ -50,7 +50,7 @@ export default function SavedMarkdown({ setMarkdown, newMarkdownSaved }) {
             <Select
                 className='reactselect'
                 classNamePrefix='reactselect'
-                placeholder='View Saved Markdown'
+                placeholder='View Saved'
                 options={options}
                 onChange={(evt) => handleSelect(evt)}
                 styles={selectStyle}
