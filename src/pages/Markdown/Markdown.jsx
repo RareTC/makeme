@@ -18,6 +18,7 @@ export default function Markdown() {
   const [markdown, setMarkdown] = useState('');
   const [title, setTitle] = useState('');
   const [newMarkdownSaved, setNewMarkdownSaved] = useState(false);
+  const [selectedMarkdown, setSelectedMarkdown] = useState(false)
 
 
   async function handleSave(evt) {
@@ -51,8 +52,9 @@ export default function Markdown() {
   return (
     <>
       <div className='savebtn'>
-        <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved} setTitle={setTitle}/>
-        <MarkdownTemplates setMarkdown={setMarkdown} setTitle={setTitle} />
+        <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved}
+         setTitle={setTitle} setSelectedMarkdown={setSelectedMarkdown}/>
+        <MarkdownTemplates setMarkdown={setMarkdown} setTitle={setTitle} setSelectedMarkdown={setSelectedMarkdown}/>
         <input
           type='text'
           name='title'
@@ -60,7 +62,16 @@ export default function Markdown() {
           onChange={(e) => setTitle(e.target.value)}
           placeholder='Enter project title'
         />
-        <button onClick={() => handleSave()}>Save</button>
+        {
+          selectedMarkdown ? (
+            <>
+            <button>Delete</button>
+            <button onClick={() => handleSave()}>Update</button>
+            </>
+          ) : (
+            <button onClick={() => handleSave()}>Save</button>
+          )
+        }
       </div>
       <div className='textcontainer'>
         <div className='markdowncomponents'>

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState  } from 'react';
 import Template1 from './Template1.jsx';
 import Template2 from './Template2.jsx';
 
-export default function MarkdownTemplates({ setMarkdown, setTitle }) {
+export default function MarkdownTemplates({ setMarkdown, setTitle, setSelectedMarkdown }) {
 
   const [showModal, setShowModal] = useState(false);
   const dialogRef = useRef(null);
@@ -37,8 +37,10 @@ export default function MarkdownTemplates({ setMarkdown, setTitle }) {
     {showModal && (
             <dialog ref={dialogRef} className='templatedialog'>
               <button onClick={() => setShowModal(false)} className='templateclose'>X</button>
-                < Template1 setMarkdown={setMarkdown} onCloseModal={handleCloseModal} setTitle={setTitle}/>
-                < Template2 setMarkdown={setMarkdown} onCloseModal={handleCloseModal} setTitle={setTitle}/>
+                < Template1 setMarkdown={setMarkdown} onCloseModal={handleCloseModal}
+                 setTitle={setTitle} setSelectedMarkdown={setSelectedMarkdown}/>
+                < Template2 setMarkdown={setMarkdown} onCloseModal={handleCloseModal}
+                 setTitle={setTitle} setSelectedMarkdown={setSelectedMarkdown}/>
             </dialog>
     )}
 

@@ -62,7 +62,6 @@
   overflow-y: scroll;
 }
 
-
 .savebtn {
   display: flex;
   flex-direction: row;
@@ -87,7 +86,6 @@
 
 .savebtn > button {
   margin-left: 5px;
-  width: 45px;
   background-color: #2d3e45;
   color: #EE933D;
   padding: 5px;
