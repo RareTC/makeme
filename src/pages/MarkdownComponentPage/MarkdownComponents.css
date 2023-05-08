@@ -7,10 +7,28 @@
     margin-right: 5px;
 }
 
+.templatedialog {
+    position: absolute;
+    top: 5%;
+}
+
 #templates {
     width: fit-content;
 }
 
+.templatephoto {
+    height: 730px;
+    border: solid 10px transparent;
+}
+
+.templatephoto:hover{
+    border: #2d3e45 solid 10px;
+}
+
+.templatebtn {
+    border: none;
+    background: transparent;
+}
 
 .markdowncomponents > button {
     margin-top: 5px;

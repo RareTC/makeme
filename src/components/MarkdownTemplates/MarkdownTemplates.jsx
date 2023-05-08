@@ -35,7 +35,7 @@ export default function MarkdownTemplates({ setMarkdown }) {
     <button id='templates' onClick={() => setShowModal(true)}>Templates</button>
 
     {showModal && (
-            <dialog ref={dialogRef}>
+            <dialog ref={dialogRef} className='templatedialog'>
               <button onClick={() => setShowModal(false)} className='modalclose'>X</button>
                 < Template1 setMarkdown={setMarkdown} onCloseModal={handleCloseModal}/>
                 < Template2 setMarkdown={setMarkdown} onCloseModal={handleCloseModal}/>

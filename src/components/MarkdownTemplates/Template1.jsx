@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import instructions from '../../assets/images/instructions.png';
 
 export default function Template1({ setMarkdown, onCloseModal }) {
 
@@ -41,8 +42,8 @@ Add information about the license that applies to this template.
       }    
 
   return (
-    <button onClick={handleClick}> 
-        Instruction Template
+    <button onClick={handleClick} className='templatebtn'> 
+      <img className='templatephoto'  src={instructions} alt="Instructions template screenshot" />
     </button>
   )
 }

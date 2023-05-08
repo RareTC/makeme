@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import project from '../../assets/images/project.png'
 
 export default function Template1({ setMarkdown, onCloseModal }) {
 
@@ -53,8 +54,8 @@ Some Features you'd like to add.
       }    
 
   return (
-    <button onClick={handleClick}> 
-        Project Template
+    <button onClick={handleClick} className='templatebtn'> 
+        <img className='templatephoto' src={project} alt="Project Template Example" />
     </button>
   )
 }
