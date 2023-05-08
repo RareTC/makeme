@@ -22,6 +22,10 @@ export default function Markdown() {
 
   async function handleSave(evt) {
     // console.log('attempting to save')
+    if (title === '') {
+      alert('Please add a title')
+      return;
+    }
     try {
       const payload = {markdown, title} 
       // console.log(payload, 'first try')
@@ -47,7 +51,7 @@ export default function Markdown() {
   return (
     <>
       <div className='savebtn'>
-        <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved}/>
+        <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved} setTitle={setTitle}/>
         < MarkdownTemplates setMarkdown={setMarkdown} />
         <input
           type='text'
@@ -72,7 +76,6 @@ export default function Markdown() {
           <ReactMarkdown className="markdown-body" children={markdown} remarkPlugins={[remarkGfm, remarkGemoji]} components={{
             code: Component,
           }} >
-            {/* {markdown} */}
           </ReactMarkdown>
         </div>
       </div>
