@@ -12,12 +12,44 @@
   backdrop-filter: blur(10px);
   border: 2px solid rgba(220, 215, 215, 0.803);
   box-shadow: 0 0 20px rgba(8,7,16,0.6);
-  padding: 10px;
+  padding: 9px;
   font-size: 15px;
+  resize: none;
 }
 
 .markdowntext:focus{
   outline: none;
+}
+
+.markdowntext::-webkit-scrollbar-track,
+.markdown::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.markdowntext::-webkit-scrollbar,
+.markdown::-webkit-scrollbar
+{
+  margin-top: 5px;
+  border-radius: 20px;
+  width: 10px;
+}
+
+.markdowntext::-webkit-scrollbar-thumb,
+.markdown::-webkit-scrollbar-thumb
+ {
+  border-radius: 20px;
+  background-color: #c8433f;
+  background-image: -webkit-linear-gradient(45deg,
+  rgba(255, 255, 255, .2) 25%,
+  transparent 25%,
+  transparent 50%,
+  rgba(255, 255, 255, .2) 50%,
+  rgba(255, 255, 255, .2) 75%,
+  transparent 75%,
+  transparent)
 }
 
 .markdown {
@@ -29,6 +61,7 @@
   padding: 10px;
   overflow-y: scroll;
 }
+
 
 .savebtn {
   display: flex;
