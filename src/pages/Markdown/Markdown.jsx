@@ -52,7 +52,7 @@ export default function Markdown() {
     <>
       <div className='savebtn'>
         <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved} setTitle={setTitle}/>
-        < MarkdownTemplates setMarkdown={setMarkdown} />
+        <MarkdownTemplates setMarkdown={setMarkdown} setTitle={setTitle} />
         <input
           type='text'
           name='title'

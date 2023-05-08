@@ -1,7 +1,7 @@
 import React from 'react';
 import project from '../../assets/images/project.png'
 
-export default function Template1({ setMarkdown, onCloseModal }) {
+export default function Template1({ setMarkdown, onCloseModal, setTitle }) {
 
     const handleClick = () => {
         setMarkdown(
@@ -50,7 +50,8 @@ Some Features you'd like to add.
 [:white_check_mark:] Added!
 `  
     );
-        onCloseModal();
+    setTitle('');
+    onCloseModal();
       }    
 
   return (

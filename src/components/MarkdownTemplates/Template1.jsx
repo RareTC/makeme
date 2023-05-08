@@ -1,7 +1,7 @@
 import React from 'react';
 import instructions from '../../assets/images/instructions.png';
 
-export default function Template1({ setMarkdown, onCloseModal }) {
+export default function Template1({ setMarkdown, onCloseModal, setTitle }) {
 
     const handleClick = () => {
         setMarkdown(
@@ -38,8 +38,9 @@ Add information about the license that applies to this template.
 
 `  
     );
-        onCloseModal();
-      }    
+    setTitle('');
+    onCloseModal();
+    }    
 
   return (
     <button onClick={handleClick} className='templatebtn'> 
