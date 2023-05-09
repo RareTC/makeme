@@ -3,7 +3,6 @@ const BASE_URL= '/api/markdowns';
 
 
 export async function deleteMarkdown(id) {
-    console.log(id, 'utilties function!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     return sendRequest(`${BASE_URL}/${id}`,'DELETE');
 }
 
