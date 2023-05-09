@@ -11,9 +11,9 @@ export default function App( {setMarkdown} ) {
 
   return (
     <main className="App">
+      <NavBar user={user} setUser={setUser} setMarkdown={setMarkdown} />
       { user ?
           <>
-          <NavBar user={user} setUser={setUser} setMarkdown={setMarkdown} />
           {/* <Markdown path=""/> */}
             <Routes>
               <Route path='/' element={< Markdown />}/>
