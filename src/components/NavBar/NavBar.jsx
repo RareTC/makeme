@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import * as userService from '../../utilities/users-service';
+import Icon from '../../assets/images/icon.png'
 
 export default function NavBar({ user, setUser }) {
 
@@ -16,9 +17,10 @@ export default function NavBar({ user, setUser }) {
         {/* <Link 
           className='navlink' 
           to="/" 
-        >
+          >
           Templates 
         </Link> */}
+        <img src={Icon} className='navicon' />
       { user ? 
         <>
           {/* <Link className='navlink' to="/saved">My Projects</Link> */}
