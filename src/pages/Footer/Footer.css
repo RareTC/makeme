@@ -1,0 +1,25 @@
+.footer {
+    width: 100%;
+    height: 60px;
+    background: rgb(45, 62, 69);
+    color: #E5EDE6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.footerlink svg {
+    color: #ee933d;
+    height: 50px;
+    width: 50px;
+}
+
+.footerlink svg:hover {
+    color: #E5EDE6;
+}
+
+.cc {
+    margin-right: 15px;
+}

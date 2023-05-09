@@ -5,11 +5,13 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Markdown from '../Markdown/Markdown';
+import Footer from '../Footer/Footer';
 
 export default function App( ) {
   const [user, setUser] = useState(getUser());
 
   return (
+    <>
     <main className="App">
       <NavBar user={user} setUser={setUser} />
       { user ?
@@ -23,5 +25,7 @@ export default function App( ) {
           <AuthPage setUser={setUser} />
       }
     </main>
+    <Footer />
+    </>
   );
 }
