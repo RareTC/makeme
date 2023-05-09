@@ -3,7 +3,17 @@ const Markdown = require('../../models/markdown');
 module.exports = {
     saveMarkdown, 
     getAllForUser,
+    deleteMarkdown,
 }
+
+
+async function deleteMarkdown(req, res) {
+    // console.log(markdowns._id, req.user._id);
+    const markdown = await Markdown.findOneAndDelete({ id: req._id, user: req.user._id })
+    console.log(markdown, 'backend markdown***********************')
+    res.json(markdown)
+  }
+  
 
 async function getAllForUser(req, res) {
     try {

@@ -18,7 +18,8 @@ export default function Markdown() {
   const [markdown, setMarkdown] = useState('');
   const [title, setTitle] = useState('');
   const [newMarkdownSaved, setNewMarkdownSaved] = useState(false);
-  const [selectedMarkdown, setSelectedMarkdown] = useState(false)
+  const [selectedMarkdown, setSelectedMarkdown] = useState(false);
+  const [objectId, setObjectId] = useState('')
 
 
   async function handleSave(evt) {
@@ -31,12 +32,21 @@ export default function Markdown() {
       const payload = {markdown, title} 
       // console.log(payload, 'first try')
       await markdownsAPI.saveMarkdown(payload);
-      // console.log(savedMarkdown, 'save button')
+      console.log(payload, 'save button')
       setNewMarkdownSaved(true);
     } catch(err) {
       console.log('Error Saving Markdown', err)
     }
   };
+
+  async function handleDelete(objectId) {
+    try {
+      console.log(objectId ,'frontend id----------------------------')
+      await markdownsAPI.deleteMarkdown(objectId);
+    } catch (err) {
+      console.log('err deleting on frontend', err);
+    }
+  }  
 
   const Component = ({ node, inline, className, children, ...props }) => {
     const codeString = children[0] || '';
@@ -53,7 +63,7 @@ export default function Markdown() {
     <>
       <div className='savebtn'>
         <SavedMarkdown setMarkdown={setMarkdown} newMarkdownSaved={newMarkdownSaved}
-         setTitle={setTitle} setSelectedMarkdown={setSelectedMarkdown}/>
+         setTitle={setTitle} setSelectedMarkdown={setSelectedMarkdown} setObjectId={setObjectId}/>
         <MarkdownTemplates setMarkdown={setMarkdown} setTitle={setTitle} setSelectedMarkdown={setSelectedMarkdown}/>
         <input
           type='text'
@@ -65,7 +75,7 @@ export default function Markdown() {
         {
           selectedMarkdown ? (
             <>
-            <button>Delete</button>
+            <button onClick={() => handleDelete(objectId)}>Delete</button>
             <button onClick={() => handleSave()}>Update</button>
             </>
           ) : (

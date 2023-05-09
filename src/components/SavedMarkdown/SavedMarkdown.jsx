@@ -4,7 +4,7 @@ import * as MarkdownsAPI from '../../utilities/markdowns-api';
 import Select from 'react-select';
 import './SavedMarkdown.css'
 
-export default function SavedMarkdown({ setMarkdown, newMarkdownSaved, setTitle, setSelectedMarkdown }) {
+export default function SavedMarkdown({ setMarkdown, newMarkdownSaved, setTitle, setSelectedMarkdown, setObjectId }) {
 
     const [savedMarkdowns, setSavedMarkdowns] = useState([]);
 
@@ -17,10 +17,11 @@ export default function SavedMarkdown({ setMarkdown, newMarkdownSaved, setTitle,
     }, [newMarkdownSaved]);
 
     const options = savedMarkdowns.map((markdown) => {
-        // console.log(markdown, 'the select');
+        // console.log(markdown._id, 'the select');
         return {
-          value: markdown.markdown,
-          label: markdown.title,
+            id: markdown._id,
+            value: markdown.markdown,
+            label: markdown.title,
         };
     });
 
@@ -40,10 +41,11 @@ export default function SavedMarkdown({ setMarkdown, newMarkdownSaved, setTitle,
       };
     
     async function handleSelect(evt) {
-        // console.log(evt, 'the evt')
+        console.log(evt.id, 'the evt')
         setMarkdown(evt.value);
         setTitle(evt.label);
         setSelectedMarkdown(true);
+        setObjectId(evt.id)
     }
     
 
