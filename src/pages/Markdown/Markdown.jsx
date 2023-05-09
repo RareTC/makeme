@@ -44,6 +44,8 @@ export default function Markdown() {
       await markdownsAPI.deleteMarkdown(objectId);
       const remainingMarkdown = await markdownsAPI.getAllForUser()
       setNewMarkdownSaved(remainingMarkdown);
+      setTitle('');
+      setMarkdown('');
     } catch (err) {
       console.log('err deleting on frontend', err);
     }
@@ -81,7 +83,7 @@ export default function Markdown() {
                 handleDelete(objectId);
               }}>Delete</button>
 
-            <button onClick={() => handleSave()}>Update</button>
+            <button onClick={() => handleSave()}>Save</button>
             </>
           ) : (
             <button onClick={() => handleSave()}>Save</button>
