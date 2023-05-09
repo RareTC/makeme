@@ -16,6 +16,7 @@ export default function NavBar({ user, setUser }) {
         <img src={Icon} className='navicon' alt='paper logo' />
       { user ? 
         <>
+          <h3 className='navuser'>Welcome, {user.name}</h3>
           {/* <Link className='navlink' to="/saved">My Projects</Link> */}
           <Link className='navlink' to="/" onClick={handleLogOut}>Log Out</Link>
         </>

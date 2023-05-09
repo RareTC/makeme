@@ -6,17 +6,17 @@ import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Markdown from '../Markdown/Markdown';
 
-export default function App( {setMarkdown} ) {
+export default function App( ) {
   const [user, setUser] = useState(getUser());
 
   return (
     <main className="App">
-      <NavBar user={user} setUser={setUser} setMarkdown={setMarkdown} />
+      <NavBar user={user} setUser={setUser} />
       { user ?
           <>
           {/* <Markdown path=""/> */}
             <Routes>
-              <Route path='/' element={< Markdown />}/>
+              <Route path='/' element={< Markdown user={user} />}/>
             </Routes>
           </>
           :
