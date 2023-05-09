@@ -8,7 +8,7 @@ router.post('/save', ensureLoggedIn, markdownsCtrl.saveMarkdown);
 
 router.get('/saved', ensureLoggedIn, markdownsCtrl.getAllForUser);
 
-router.delete('/:_id', ensureLoggedIn, markdownsCtrl.deleteMarkdown);
+router.delete('/:id', ensureLoggedIn, markdownsCtrl.deleteMarkdown);
 
 
 module.exports = router; 

@@ -13,14 +13,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className='navbar'>
-      {/* <Link className='navlink' to="/">New</Link> */}
-        {/* <Link 
-          className='navlink' 
-          to="/" 
-          >
-          Templates 
-        </Link> */}
-        <img src={Icon} className='navicon' />
+        <img src={Icon} className='navicon' alt='paper logo' />
       { user ? 
         <>
           {/* <Link className='navlink' to="/saved">My Projects</Link> */}

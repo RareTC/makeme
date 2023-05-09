@@ -42,7 +42,8 @@ export default function Markdown() {
   async function handleDelete(objectId) {
     try {
       await markdownsAPI.deleteMarkdown(objectId);
-      setNewMarkdownSaved(true);
+      console.log(objectId, 'fe delete function id')
+      // setNewMarkdownSaved(true);
     } catch (err) {
       console.log('err deleting on frontend', err);
     }
@@ -75,7 +76,11 @@ export default function Markdown() {
         {
           selectedMarkdown ? (
             <>
-            <button onClick={() => handleDelete(objectId)}>Delete</button>
+              <button onClick={() => {
+                console.log(objectId);
+                handleDelete(objectId);
+              }}>Delete</button>
+
             <button onClick={() => handleSave()}>Update</button>
             </>
           ) : (

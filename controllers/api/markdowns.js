@@ -8,7 +8,8 @@ module.exports = {
 
 
 async function deleteMarkdown(req, res) {
-    const markdown = await Markdown.findOneAndDelete({ id: req._id, user: req.user._id })
+    console.log(req.params.id, 'backend req')
+    const markdown = await Markdown.findOneAndDelete({ _id: req.params.id })
     res.json(markdown)
   }
   
