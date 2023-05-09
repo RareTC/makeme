@@ -42,6 +42,7 @@ export default function Markdown() {
   async function handleDelete(objectId) {
     try {
       await markdownsAPI.deleteMarkdown(objectId);
+      setNewMarkdownSaved(true);
     } catch (err) {
       console.log('err deleting on frontend', err);
     }
