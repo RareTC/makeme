@@ -7,9 +7,8 @@
 
   # A MERN Stack Web Based Application
 
-  ### [CLICK HERE TO VISIT](https://mockup-magic.herokuapp.com/)
+  ### [CLICK HERE TO VISIT](https://makeme.herokuapp.com/)
 
-  ##### Trevor Campbell
 
 [![LinkedIn Badge](https://img.shields.io/badge/-Trevor-blue?style=flat&logo=Linkedin&logoColor=black)](https://www.linkedin.com/in/trevor-campbell-a9188624a/)
 
