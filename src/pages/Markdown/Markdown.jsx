@@ -17,7 +17,7 @@ export default function Markdown() {
 
   const [markdown, setMarkdown] = useState('');
   const [title, setTitle] = useState('');
-  const [newMarkdownSaved, setNewMarkdownSaved] = useState(false);
+  const [newMarkdownSaved, setNewMarkdownSaved] = useState();
   const [selectedMarkdown, setSelectedMarkdown] = useState(false);
   const [objectId, setObjectId] = useState('')
 
@@ -33,7 +33,7 @@ export default function Markdown() {
       // console.log(payload, 'first try')
       await markdownsAPI.saveMarkdown(payload);
       console.log(payload, 'save button')
-      setNewMarkdownSaved(true);
+      setNewMarkdownSaved(payload);
     } catch(err) {
       console.log('Error Saving Markdown', err)
     }
@@ -42,8 +42,8 @@ export default function Markdown() {
   async function handleDelete(objectId) {
     try {
       await markdownsAPI.deleteMarkdown(objectId);
-      console.log(objectId, 'fe delete function id')
-      // setNewMarkdownSaved(true);
+      const remainingMarkdown = await markdownsAPI.getAllForUser()
+      setNewMarkdownSaved(remainingMarkdown);
     } catch (err) {
       console.log('err deleting on frontend', err);
     }
