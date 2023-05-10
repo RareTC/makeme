@@ -6,7 +6,7 @@
 
 .markdowntext {
   width: 45%;
-  height: 83vh;
+  height: 75vh;
   border-radius: 15px;
   background-color: rgba(214, 209, 209, 0.5);
   backdrop-filter: blur(10px);
@@ -54,7 +54,7 @@
 .markdown {
   border: solid 1px #2d3e45;
   width: 45%;
-  height: 83vh;
+  height: 75vh;
   border-radius: 15px;
   background-color: #fff;
   padding: 10px;
