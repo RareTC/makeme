@@ -4,5 +4,5 @@
   background-attachment: fixed;
   background-size: cover;
   /* background by SVGBackgrounds.com */
-  height: 100vh;
+  height: calc(100vh - 120px)
 }
