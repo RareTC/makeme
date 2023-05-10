@@ -4,5 +4,8 @@
   background-attachment: fixed;
   background-size: cover;
   /* background by SVGBackgrounds.com */
-  height: calc(100vh - 120px)
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

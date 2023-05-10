@@ -1,7 +1,6 @@
 .textcontainer {
   display: flex;
   justify-content: center;
-  padding-top: 20px;
 }
 
 .markdowntext {
@@ -66,6 +65,7 @@
   flex-direction: row;
   justify-content: center;
   padding-top: 10px;
+  margin-bottom: 10px;
 }
 
 .savebtn > input {
