@@ -20,7 +20,7 @@
   
 ## :pencil: Description
 
-Welcome to MAKEME.md! Our MERN-based app lets you create beautiful and functional README.md files quickly and easily. With side-by-side viewing feature, you can see your markdown changes in real time as you work. The left-hand menu provides easy access to commonly used markdown components, as well as templates that can help jumpstart your README creation process.
+Welcome to MAKEME.md! A MERN-based app that lets you create beautiful and functional README.md files quickly and easily. With side-by-side viewing feature, you can see your markdown changes in real time as you work. The left-hand menu provides easy access to commonly used markdown components, as well as templates that can help jumpstart your README creation process.
 
 MAKEME.md is modeled after Github's own README.md, so you can trust that your readme will look great and be easily readable. With the ability to log in, you can save your ongoing projects and come back to them later. Plus, with access to your past projects, you can easily find and reference READMEs you've created in the past.
 
