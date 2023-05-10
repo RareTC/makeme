@@ -32,7 +32,7 @@ export default function Markdown() {
       const payload = {markdown, title} 
       // console.log(payload, 'first try')
       await markdownsAPI.saveMarkdown(payload);
-      console.log(payload, 'save button')
+      // console.log(payload, 'save button')
       setNewMarkdownSaved(payload);
     } catch(err) {
       console.log('Error Saving Markdown', err)
@@ -79,7 +79,7 @@ export default function Markdown() {
           selectedMarkdown ? (
             <>
               <button onClick={() => {
-                console.log(objectId);
+                // console.log(objectId);
                 handleDelete(objectId);
               }}>Delete</button>
 

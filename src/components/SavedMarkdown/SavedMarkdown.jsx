@@ -41,7 +41,7 @@ export default function SavedMarkdown({ setMarkdown, newMarkdownSaved, setTitle,
       };
     
     async function handleSelect(evt) {
-        console.log(evt.id, 'the evt')
+        // console.log(evt.id, 'the evt')
         setMarkdown(evt.value);
         setTitle(evt.label);
         setSelectedMarkdown(true);
