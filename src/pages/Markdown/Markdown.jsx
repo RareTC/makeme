@@ -9,8 +9,10 @@ import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import MarkdownComponents from '../MarkdownComponentPage/MarkdownComponents';
 import * as markdownsAPI from '../../utilities/markdowns-api';
 import SavedMarkdown from '../../components/SavedMarkdown/SavedMarkdown';
-import remarkGemoji from 'remark-gemoji'
-import MarkdownTemplates from '../../components/MarkdownTemplates/MarkdownTemplates'
+import remarkGemoji from 'remark-gemoji';
+import MarkdownTemplates from '../../components/MarkdownTemplates/MarkdownTemplates';
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
 
 export default function Markdown() {
@@ -20,7 +22,13 @@ export default function Markdown() {
   const [newMarkdownSaved, setNewMarkdownSaved] = useState();
   const [selectedMarkdown, setSelectedMarkdown] = useState(false);
   const [objectId, setObjectId] = useState('')
+  const [copied, setCopied] = useState(false);
 
+  async function handleCopy() {
+    await navigator.clipboard.writeText(markdown);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   async function handleSave(evt) {
     // console.log('attempting to save')
@@ -99,7 +107,13 @@ export default function Markdown() {
           onChange={(e) => setMarkdown(e.target.value)}
         >
         </textarea>
-
+        <button className='copybtn' onClick={handleCopy}>
+          { copied ?
+          <AssignmentTurnedInIcon/>
+          :
+          <FileCopyIcon />
+           }
+        </button>
         <div className='markdown'>
           <ReactMarkdown className="markdown-body" children={markdown} remarkPlugins={[remarkGfm, remarkGemoji]} components={{
             code: Component,

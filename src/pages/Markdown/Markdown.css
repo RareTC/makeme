@@ -100,6 +100,26 @@
   color: #2d3e45 !important;
 }
 
+.copybtn {
+  height: 30px;
+  position: absolute;
+  left: 51.8%;
+  top: 13.9%;
+  background: none;
+  border: none;
+  color: #2d3e45;
+  transition: all 0.3s ease-in-out;
+}
+
+.copybtn:hover {
+  color: #c8433f;
+  cursor: pointer;
+}
+
+.copybtn:active {
+  transform:translateY(5px);
+}
+
 @media (prefers-color-scheme: dark) {
   .markdown {
     background-color: #0d1117;
