@@ -1,6 +1,7 @@
 .textcontainer {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .markdowntext {
@@ -103,8 +104,8 @@
 .copybtn {
   height: 30px;
   position: absolute;
-  left: 51.8%;
-  top: 13.9%;
+  left: 51%;
+  top: 5px;
   background: none;
   border: none;
   color: #2d3e45;
