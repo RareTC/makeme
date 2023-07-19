@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Markdown from '../Markdown/Markdown';
 import Footer from '../Footer/Footer';
+import Chat from '../../components/Chat/Chat';
 
 export default function App( ) {
   const [user, setUser] = useState(getUser());
@@ -24,6 +25,7 @@ export default function App( ) {
           :
           <AuthPage setUser={setUser} />
       }
+      <Chat />
       <Footer />
     </main>
     </>

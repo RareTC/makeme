@@ -1,0 +1,42 @@
+.chat-icon {
+    background-color: transparent;
+    border: none;
+    color: #2d3e45;
+    position: absolute;
+    left: 20px;
+    top: 40px;
+}
+
+#chat-icon {
+    font-size: 40px;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+      color: #2d3e45;
+    }
+    50% {
+      transform: scale(1.2);
+      color: #C8433F;
+    }
+    100% {
+      transform: scale(1);
+      color: #2d3e45;
+    }
+  }
+
+  #chat-icon:hover {
+    cursor: pointer;
+  }
+  
+  .chatdialog {
+    position: absolute;
+    top: 120px;
+    left: -85%;
+    width: 20rem;
+  }
