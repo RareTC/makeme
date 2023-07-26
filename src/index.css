@@ -3,3 +3,11 @@ body {
   margin-top: 60px;
   font-family: 'Exo 2', sans-serif;
 }
+
+:root {
+  --color0:  #e5ede6;
+  --color1: #EE933D;
+  --color2: #AE8F85;
+  --color3: #c8433f;
+  --color4: #2d3e45;
+}

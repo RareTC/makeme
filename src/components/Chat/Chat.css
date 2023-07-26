@@ -3,7 +3,7 @@
     border: none;
     color: #2d3e45;
     position: absolute;
-    left: 20px;
+    right: 20px;
     top: 40px;
 }
 
@@ -35,8 +35,103 @@
   }
   
   .chatdialog {
+    margin: 0;
+    padding: 0;
+    height: 80vh;
+    width: 50% !important;
     position: absolute;
-    top: 120px;
-    left: -85%;
+    top: 140px;
+    left: 45%;
     width: 20rem;
+    color: var(--color0);
+  }
+
+  .side-bar {
+    background-color: var(--color4);
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .chat-button {
+    color: var(--color0);
+    border: solid 0.5px;
+    border-color: var(--color3);
+    background-color: transparent;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .chat-nav {
+    border-top: solid 0.5px;
+    border-color: var(--color3);
+  }
+  
+  .history {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .history li {
+    list-style-type: none;
+    padding: 15px 0;
+    cursor: pointer;
+  }
+
+  .main {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info {
+    color: var(--color1);
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .chat-input {
+    width: 100%;
+    border: none;
+    background-color: var(--color0);
+    padding: 12px 15px;
+    border-radius: 4px;
+    box-shadow: rgba(0,0,0, 0.05) 0 54px 55px,
+    rgba(0,0,0, 0.05) 0 -12px 30px,
+    rgba(0,0,0, 0.05) 0 4px 6px,
+    rgba(0,0,0, 0.05) 0 12px 3px,
+    rgba(0,0,0, 0.05) 0 -3px 5px;
+    font-size: 15px;
+  }
+
+  .chat-input:focus {
+    outline: none;
+  }
+
+  #submit {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    cursor: pointer;
+    color: var(--color4);
   }

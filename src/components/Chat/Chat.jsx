@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ChatIcon from '@mui/icons-material/Chat';
+import AddIcon from '@mui/icons-material/Add';
+import SendIcon from '@mui/icons-material/Send';
 import './Chat.css';
 
 export default function MarkdownLink({ setMarkdown }) {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(true);
   const dialogRef = useRef(null);
 
   const handleClick = () => {
@@ -35,6 +37,34 @@ export default function MarkdownLink({ setMarkdown }) {
       {showModal && (
         <dialog ref={dialogRef} className='chatdialog'>
             <button onClick={() => setShowModal(false)} className='modalclose'>X</button>
+            <section className='side-bar'>
+              <button className='chat-button'>
+                <AddIcon sx={{mb:-0.5}}/> New Chat </button>
+              <ul className='history'>
+                <li>bleh</li>
+              </ul>
+              <nav className='chat-nav'>
+                <p>Made by USER-NAME</p>
+              </nav>
+            </section>
+            <section className='main'>
+              <h1>Creativity Chat</h1>
+                <ul className='feed'>
+
+                </ul>
+                <div className="bottom-section">
+                  <div className='input-container'>
+                    <input className='chat-input' />
+                    <div id='submit'>
+                      <SendIcon />
+                    </div>
+                  </div>
+                <p className='info'>
+                  Utilizing Chat-GPT's Language AI, interact to create content. 
+                </p>
+                </div>
+            </section>
+
         </dialog>
       )}
     </>
