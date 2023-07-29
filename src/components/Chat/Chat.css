@@ -1,3 +1,18 @@
+/* .modalclosechat {
+  background-color: transparent;
+  color: #2d3e45;
+  border: none;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.modalclosechat:hover {
+  cursor: pointer;
+  color: #EE933D;
+} */
+
 .chat-icon {
     background-color: transparent;
     border: none;
@@ -38,10 +53,10 @@
     margin: 0;
     padding: 0;
     height: 80vh;
-    width: 50% !important;
+    width: 48% !important;
     position: absolute;
     top: 140px;
-    left: 45%;
+    left: 51%;
     width: 20rem;
     color: var(--color0);
   }

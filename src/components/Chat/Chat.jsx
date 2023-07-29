@@ -39,7 +39,7 @@ export default function MarkdownLink({ setMarkdown }) {
             <button onClick={() => setShowModal(false)} className='modalclose'>X</button>
             <section className='side-bar'>
               <button className='chat-button'>
-                <AddIcon sx={{mb:-0.5}}/> New Chat </button>
+                <AddIcon sx={{mb:-0.8}}/> New Chat </button>
               <ul className='history'>
                 <li>bleh</li>
               </ul>
@@ -56,7 +56,7 @@ export default function MarkdownLink({ setMarkdown }) {
                   <div className='input-container'>
                     <input className='chat-input' />
                     <div id='submit'>
-                      <SendIcon />
+                      <SendIcon sx={{ mb: -1 }} />
                     </div>
                   </div>
                 <p className='info'>
