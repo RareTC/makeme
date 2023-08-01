@@ -13,26 +13,84 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import './Chat.css';
 
+
+const API_KEY = process.env.GPT_API
+
+
 export default function MarkdownLink({ setMarkdown }) {
+  const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([{
-    message: "hello, I am chatgpt",
+    message: "Sorry, no more API Credits Available",
     sender: 'chatGPT'
   }]);
   const [showModal, setShowModal] = useState(true);
   const dialogRef = useRef(null);
 
-  const handleClick = () => {
-    setShowModal(false);
-  };
 
-  const handleOutsideClick = (event) => {
-    if (dialogRef.current && !dialogRef.current.contains(event.target)) {
-      setShowModal(false);
-    }
-  };
 
   const handleSend = async (message) => {
-    
+    const newMessage = {
+      message: message, 
+      sender: "user",
+      direction: "outgoing",
+    }
+
+    const newMessages = [...messages, newMessage];
+
+    //update our messages state
+    setMessages(newMessages)
+    //Set typing indicator 
+    setTyping(true);
+    //process message to chatGPT(send it over to get a response)
+    await processMessage(newMessages);
+  }
+
+  async function processMessage(chatMessages) {
+    //chatMessages {sender: "user" or "chatGPT", message: "message content"}
+    //apiMessages { role: "user" or "assistant", content: "message content"}
+
+    let apiMessages = chatMessages.map((messageObject) => {
+      let role = "";
+      if(messageObject.sender === "ChatGPT") {
+        role = "assistant"
+      } else {
+        role = "user"
+      }
+      return { role: role, content: messageObject.message }
+    });
+
+    const systemMessage = {
+      role : "system",
+      content: ""
+    }
+
+    const apiRequestBody = {
+      "model" : "gpt-3.5-turbo",
+      "messages" : [
+        systemMessage,
+        ...apiMessages,//[array of messages existing]
+      ]
+    }
+
+    await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization" : "Bearer " + API_KEY,
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(apiRequestBody)
+    }).then((data) => {
+      return data.json();
+    }).then((data) => {
+      setMessages(
+        [...chatMessages], {
+          message: data.choices[0].message.content,
+          sender: "ChatGPT"
+        }
+      );
+      setTyping(false);
+    })
+
   }
 
   return (
@@ -47,7 +105,10 @@ export default function MarkdownLink({ setMarkdown }) {
             <div style={{ position:"relative", height: "800px", width: "700px" }}>
               <MainContainer>
                 <ChatContainer>
-                  <MessageList>
+                  <MessageList
+                  scrollBehavior='smooth'
+                    typingIndicator={typing ? <TypingIndicator content = "MakeMe Bot Typing"/> : null }
+                  >
                     {messages.map((message, i) => {
                       return <Message key={i} model={message} />
                     })}
@@ -63,31 +124,3 @@ export default function MarkdownLink({ setMarkdown }) {
     </>
   );
 }
-
-{/* <section className='side-bar'>
-  <button className='chat-button'>
-    <AddIcon sx={{mb:-0.8}}/> New Chat </button>
-  <ul className='history'>
-    <li>bleh</li>
-  </ul>
-  <nav className='chat-nav'>
-    <p>Made by USER-NAME</p>
-  </nav>
-</section>
-<section className='main'>
-  <h1>Creativity Chat</h1>
-    <ul className='feed'>
-
-    </ul>
-    <div className="bottom-section">
-      <div className='input-container'>
-        <input className='chat-input' />
-        <div id='submit'>
-          <SendIcon sx={{ mb: -1 }} />
-        </div>
-      </div>
-    <p className='info'>
-      Utilizing Chat-GPT's Language AI, interact to create content. 
-    </p>
-    </div>
-</section> */}

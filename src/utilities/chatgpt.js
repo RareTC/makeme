@@ -9,4 +9,3 @@
 //     return sendRequest (`${BASE_URL}`)
     
 // }
-  

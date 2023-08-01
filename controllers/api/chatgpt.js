@@ -1,27 +1,3 @@
-// controllers/chatController.js
-const { getChatGptResponse } = require('../../src/utilities/chatgpt');
-
-const sendMessage = async (req, res) => {
-  const { message } = req.body;
-  console.log(message, 'ami in backend')
-  try {
-    const response = await getChatGptResponse(message);
-    res.json({ message: response });
-  } catch (error) {
-    console.error('Error sending message:', error);
-    res.status(500).json({ error: 'Something went wrong.' });
-  }
-};
-
-module.exports = {
-  sendMessage,
-};
-
-
-
-
-
-
 // module.exports = {
 //     getChat,
 // }
