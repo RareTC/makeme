@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ChatIcon from '@mui/icons-material/Chat';
-// import AddIcon from '@mui/icons-material/Add';
-// import SendIcon from '@mui/icons-material/Send';
 import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -20,10 +18,10 @@ const API_KEY = process.env.GPT_API
 export default function MarkdownLink({ setMarkdown }) {
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([{
-    message: "Sorry, no more API Credits Available",
-    sender: 'chatGPT'
+    message: "What can I help you with?",
+    sender: 'chatGPT',
   }]);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const dialogRef = useRef(null);
 
 
@@ -100,7 +98,7 @@ export default function MarkdownLink({ setMarkdown }) {
       </button>
       {showModal && (
         <dialog ref={dialogRef} className='chatdialog'>
-            <button onClick={() => setShowModal(false)} className='modalclose'>X</button>
+            <button onClick={() => setShowModal(false)} className='modalclose' id='chatclose'>X</button>
 
             <div style={{ position:"relative", height: "800px", width: "700px" }}>
               <MainContainer>
